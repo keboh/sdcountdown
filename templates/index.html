@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Countdown</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <style>
+        a:hover {
+            text-decoration: none
+        }
+
+        .home {
+            height: 100vh
+        }
+
+        .splash {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .intro {
+            padding-right: 15px;
+            padding-bottom: 15px
+        }
+
+        .CTA {
+            width: 300px;
+            padding: 20px;
+            color: #28324E;
+            font-size: large
+        }
+
+        .CTA:hover {
+            background-color: #28324E;
+            border-color: #fff;
+            color: #fff
+        }
+
+        .splash h1,
+        .splash p {
+            color: #000;
+            font-family: 'Roboto Condensed', sans-serif
+        }
+
+        .splash p {
+            padding-top: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row home">
+            <div class="col-md-12 splash">
+                <div class="intro">
+                    <h1 id="timer"></h1>
+                    <p>Until I see you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    </script>
+</body>
+<footer>
+    <script>
+        var countDownDate = new Date("{{ date }}").getTime(), x = setInterval(function () { var e = (new Date).getTime(), t = countDownDate - e, n = Math.floor(t / 864e5), o = Math.floor(t % 864e5 / 36e5), a = Math.floor(t % 36e5 / 6e4), r = Math.floor(t % 6e4 / 1e3); document.getElementById("timer").innerHTML = n + " Days, " + o + " Hours, " + a + " Minutes, " + r + " Seconds ", t < 0 && (clearInterval(x), document.getElementById("timer").innerHTML = "I'm here.") }, 1e3);
+    </script>
+</footer>
